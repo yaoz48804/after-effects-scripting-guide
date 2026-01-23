@@ -134,7 +134,7 @@ Boolean.
 `app.project.item(index).layer(index).propertyGroupSpec.addVariableFontAxis(axisTag)`
 
 !!! note
-    This functionality was added in After Effects (Beta) 26.0 and is subject to change while it remains in Beta.
+    This functionality was added in After Effects 26.0
 
 #### Description
 

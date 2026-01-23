@@ -465,7 +465,7 @@ Integer; read-only.
 `app.project.item(index).layer(index).propertySpec.propertyParameters`
 
 !!! note
-    This functionality was added in After Effects (Beta) 26.0 and is subject to change while it remains in Beta.
+    This functionality was added in After Effects 26.0
 
 #### Description
 
@@ -613,7 +613,7 @@ A value appropriate for the type of the property (see [Property.propertyValueTyp
 `app.project.item(index).layer(index).propertySpec.valueText`
 
 !!! note
-    This functionality was added in After Effects (Beta) 26.0 and is subject to change while it remains in Beta.
+    This functionality was added in After Effects 26.0
 
 #### Description
 
