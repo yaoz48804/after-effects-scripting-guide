@@ -8,9 +8,9 @@ What's new and changed for scripting?
 
 ---
 
-## After Effects 26 (Beta)
+## After Effects 26
 
-### After Effects 26.0 (Beta) (November 2025)
+### [After Effects 26.0](https://helpx.adobe.com/after-effects/using/whats-new.html) (January 2026)
 
 - Scripting methods and attributes added:
     - Added: [PropertyGroup.addVariableFontAxis()](../property/propertygroup.md#propertygroupaddvariablefontaxis)
