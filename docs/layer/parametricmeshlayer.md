@@ -3,7 +3,7 @@
 `app.project.item(index).layer(index)`
 
 !!! note
-    This functionality was added in After Effects 26.3
+    This functionality was added in After Effects (Beta) 26.3 and is subject to change while it remains in Beta.
 
 #### Description
 
@@ -30,6 +30,9 @@ if (layer instanceof ParametricMeshLayer)
 
 `app.project.item(index).layer(index).meshType`
 
+!!! note
+    This functionality was added in After Effects (Beta) 26.3 and is subject to change while it remains in Beta.
+
 #### Description
 
 For a parametric mesh layer, its mesh type. Trying to set this attribute for a non-parametric mesh layer produces an error.
@@ -47,9 +50,12 @@ A `MeshType` enumerated value; read/write. One of:
 
 ---
 
-### ParametricMeshLayer.MeshOptions
+### ParametricMeshLayer.meshOptions
 
-`comp.layer(index).meshOptions`
+`app.project.item(index).layer(index).meshOptions`
+
+!!! note
+    This functionality was added in After Effects (Beta) 26.3 and is subject to change while it remains in Beta.
 
 #### Description
 
@@ -60,75 +66,77 @@ Gets/sets details about the structure of the parametric mesh.
 `MeshOptions` based on the MeshType of the layer, as follows.
 
 #### For MeshType.CUBE
-- `MeshOptions.width`
-- `MeshOptions.height`
-- `MeshOptions.depth`
-- `MeshOptions.smoothingAngle`
+- `meshOptions.width`
+- `meshOptions.height`
+- `meshOptions.depth`
+- `meshOptions.smoothingAngle`
 
 #### For MeshType.SPHERE
-- `MeshOptions.radius`
-- `MeshOptions.sides`
-- `MeshOptions.sliceCaps`
-- `MeshOptions.sliceStart`
-- `MeshOptions.sliceEnd`
-- `MeshOptions.smoothingAngle`
+- `meshOptions.radius`
+- `meshOptions.sides`
+- `meshOptions.sliceCaps`
+- `meshOptions.sliceStart`
+- `meshOptions.sliceEnd`
+- `meshOptions.smoothingAngle`
 
 #### For MeshType.PLANE
-- `MeshOptions.width`
-- `MeshOptions.length`
-- `MeshOptions.cornerRadius`
-- `MeshOptions.cornerSides`
+- `meshOptions.width`
+- `meshOptions.length`
+- `meshOptions.cornerRadius`
+- `meshOptions.cornerSides`
 
 ####  For Meshtype.TORUS
-- `MeshOptions.ringRadius`
-- `MeshOptions.pipeRadius`
-- `MeshOptions.ringSides`
-- `MeshOptions.pipeSides`
-- `MeshOptions.caps`
-- `MeshOptions.sliceStart`
-- `MeshOptions.sliceEnd`
-- `MeshOptions.smoothingAngle`
+- `meshOptions.ringRadius`
+- `meshOptions.pipeRadius`
+- `meshOptions.ringSides`
+- `meshOptions.pipeSides`
+- `meshOptions.caps`
+- `meshOptions.sliceStart`
+- `meshOptions.sliceEnd`
+- `meshOptions.smoothingAngle`
 
 ####  For MeshType.CONE
-- `MeshOptions.topRadius`
-- `MeshOptions.bottomRadius`
-- `MeshOptions.height`
-- `MeshOptions.sides`
-- `MeshOptions.topCap`
-- `MeshOptions.bottomCap`
-- `MeshOptions.sliceCaps`
-- `MeshOptions.sliceStart`
-- `MeshOptions.sliceEnd`
-- `MeshOptions.smoothingAngle`
+- `meshOptions.topRadius`
+- `meshOptions.bottomRadius`
+- `meshOptions.height`
+- `meshOptions.sides`
+- `meshOptions.topCap`
+- `meshOptions.bottomCap`
+- `meshOptions.sliceCaps`
+- `meshOptions.sliceStart`
+- `meshOptions.sliceEnd`
+- `meshOptions.smoothingAngle`
 
 #### For MeshType.CYLINDER
-- `MeshOptions.radius`
-- `MeshOptions.height`
-- `MeshOptions.sides`
-- `MeshOptions.topCap`
-- `MeshOptions.bottomCap`
-- `MeshOptions.sliceCaps`
-- `MeshOptions.sliceStart`
-- `MeshOptions.sliceEnd`
-- `MeshOptions.smoothingAngle`
+- `meshOptions.radius`
+- `meshOptions.height`
+- `meshOptions.sides`
+- `meshOptions.topCap`
+- `meshOptions.bottomCap`
+- `meshOptions.sliceCaps`
+- `meshOptions.sliceStart`
+- `meshOptions.sliceEnd`
+- `meshOptions.smoothingAngle`
 
 ---
 
-#### ParametricMeshLayer.BevelOptions
+### ParametricMeshLayer.bevelOptions
 
-`comp.layer(index).bevelOptions`
+`app.project.item(index).layer(index).bevelOptions`
+
+!!! note
+    This functionality was added in After Effects (Beta) 26.3 and is subject to change while it remains in Beta.
 
 #### Description
 
 Gets/sets details about the beveling of the parametric mesh.
 
 !!! info
-	Only Parametric Mesh Layers with `MeshType.CUBE`, `MeshType.CONE`, and `MeshType.CYLINDER` have `BevelOptions`.
+	Only Parametric Mesh Layers with `MeshType.CUBE`, `MeshType.CONE`, and `MeshType.CYLINDER` have `bevelOptions`.
 
 #### Type
 
 `BevelOptions` based on the MeshType of the layer, as follows.
-
 
 #### For MeshType.CUBE
 - `bevelOptions.radius`

@@ -10,7 +10,15 @@ What's new and changed for scripting?
 
 ## After Effects 26
 
-### [After Effects 26.0](https://helpx.adobe.com/after-effects/using/whats-new.html) (January 2026)
+### [After Effects 26.3](https://helpx.adobe.com/after-effects/using/whats-new.html) (June 2026)
+
+- Scripting methods and attributes added:
+    - Added: [LayerCollection.addParametricMesh()](../layer/layercollection.md#layercollectionaddparametricmesh)
+    - Added: [ParametricMeshLayer object](../layer/parametricmeshlayer.md)
+    - Added: [ParametricMeshLayer.MeshOptions](../layer/parametricmeshlayer.md#parametricmeshlayermeshoptions)
+    - Added: [ParametricMeshLayer.BevelOptions](../layer/parametricmeshlayer.md#parametricmeshlayerbeveloptions)
+
+### [After Effects 26.0](https://helpx.adobe.com/after-effects/using/2026.html) (January 2026)
 
 - Scripting methods and attributes added:
     - Added: [PropertyGroup.addVariableFontAxis()](../property/propertygroup.md#propertygroupaddvariablefontaxis)
