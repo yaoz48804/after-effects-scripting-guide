@@ -10,7 +10,22 @@
 The ParametricMeshLayer object represents a Parametric Mesh layer within a composition.
 
 !!! info
-	ParametricMeshLayer is a subclass of [AVLayer object](avlayer.md). All methods and attributes of AVLayer are available when working with ParametricMeshLayer.
+	ParametricMeshLayer is a subclass of [AVLayer object](avlayer.md). It inherits the following properties and property groups from [AVLayer object](avlayer.md):
+
+- Marker
+- Time Remap
+- Transform
+    - Anchor Point
+    - Position
+    - Scale
+    - Orientation
+    - X Rotation
+    - Y Rotation
+    - Rotation
+    - Opacity
+- Layer Styles
+- Audio
+    - AudioLevels
 
 #### Example
 
