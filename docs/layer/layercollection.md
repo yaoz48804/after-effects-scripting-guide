@@ -275,7 +275,7 @@ Creates a new parametric 3D mesh layer.
 |  Parameter   |  Type    |                                                                 Description                                                                  |
 | ------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`       | String                                                      | The name of the new layer.                                  |
-| `meshType`   | [MeshType](parametricmeshlayer.md#parametricmeshlayermeshtype) | The mesh type of the new layer. |
+| `meshType`   | [MeshType](parametricmeshlayer.md#parametricmeshlayerparametricmeshtype) | The mesh type of the new layer. |
 
 #### Returns
 
