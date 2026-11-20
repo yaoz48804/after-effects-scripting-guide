@@ -22,6 +22,8 @@ Note that some classes exist only as base classes, and demonstrate unexpected be
 - [PropertyBase object](../property/propertybase.md) ⚠
     - [Property object](../property/property.md)
     - [PropertyGroup object](../property/propertygroup.md)
+        - [MaterialAssignmentPropertyGroup object](../property/materialassignmentpropertygroup.md)
+        - [MaterialPropertyGroup object](../property/materialpropertygroup.md)
         - [MaskPropertyGroup object](../property/maskpropertygroup.md)
         - [Layer object](../layer/layer.md) ⚠
             - [AVLayer object](../layer/avlayer.md)
