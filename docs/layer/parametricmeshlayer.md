@@ -39,7 +39,64 @@ if (layer instanceof ParametricMeshLayer)
 }
 ```
 
+The material assignment APIs below are available in After Effects (Beta) 27.1 and are subject to change while they remain in Beta.
+
 ## Attributes
+
+### ParametricMeshLayer.canAddOrRemoveMaterialOverride
+
+`app.project.item(index).layer(index).canAddOrRemoveMaterialOverride`
+
+!!! warning
+    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
+
+#### Description
+
+`true` if this layer type supports adding or removing material overrides.
+
+Parametric mesh layers always have their material override present, so this value is `false`. The material source can still be changed with [MaterialPropertyGroup.setMaterialOverride()](../property/materialpropertygroup.md#materialpropertygroupsetmaterialoverride).
+
+#### Type
+
+Boolean; read-only.
+
+---
+
+### ParametricMeshLayer.materialAssignment
+
+`app.project.item(index).layer(index).materialAssignment`
+
+!!! warning
+    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
+
+#### Description
+
+The layer's material assignment group. A ParametricMeshLayer has one material assignment, accessible with `MaterialAssignment.MATERIAL`.
+
+The assignment's [material properties](../property/materialpropertygroup.md#accessing-material-properties) depend on its source. The default material exposes intrinsic properties such as Base Color and Roughness; Substance and layer sources expose texture transforms. Uniform Tiling and Randomize Offset are not available on parametric mesh layers.
+
+#### Type
+
+[MaterialAssignmentPropertyGroup object](../property/materialassignmentpropertygroup.md); read-only.
+
+---
+
+### ParametricMeshLayer.materialAssignmentCount
+
+`app.project.item(index).layer(index).materialAssignmentCount`
+
+!!! warning
+    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
+
+#### Description
+
+The total number of material assignments on the layer, including assignments whose material override has not been added. A ParametricMeshLayer has one material assignment. This value is the same as `materialAssignment.numProperties`.
+
+#### Type
+
+Integer; read-only.
+
+---
 
 ### ParametricMeshLayer.parametricMeshType
 
@@ -168,4 +225,3 @@ Gets/sets details about the beveling of the parametric mesh.
 - `parametricBevelOptions.sides`
 
 ---
-
