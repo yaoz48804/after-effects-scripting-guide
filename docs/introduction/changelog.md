@@ -8,6 +8,18 @@ What's new and changed for scripting?
 
 ---
 
+## After Effects 27
+
+### After Effects 27.1 Beta Build xx
+
+- Scripting methods and attributes added:
+    - Added: [AVLayer.isMaterialSource](../layer/avlayer.md#avlayerismaterialsource)
+    - Added material assignment APIs to [ParametricMeshLayer](../layer/parametricmeshlayer.md#parametricmeshlayermaterialassignment), [ThreeDModelLayer](../layer/threedmodellayer.md#threedmodellayermaterialassignment), [ShapeLayer](../layer/shapelayer.md#shapelayermaterialassignment), and [TextLayer](../layer/textlayer.md#textlayermaterialassignment)
+    - Added: [MaterialAssignmentPropertyGroup object](../property/materialassignmentpropertygroup.md)
+    - Added: [MaterialPropertyGroup object](../property/materialpropertygroup.md)
+
+---
+
 ## After Effects 26
 
 ### [After Effects 26.5](https://helpx.adobe.com/after-effects/using/whats-new.html) (September 2026)
