@@ -25,8 +25,10 @@ Note that some classes exist only as base classes, and demonstrate unexpected be
         - [MaskPropertyGroup object](../property/maskpropertygroup.md)
         - [Layer object](../layer/layer.md) ⚠
             - [AVLayer object](../layer/avlayer.md)
+                - [ParametricMeshLayer object](../layer/parametricmeshlayer.md)
                 - [ShapeLayer object](../layer/shapelayer.md)
                 - [TextLayer object](../layer/textlayer.md)
+                - [ThreeDModelLayer object](../layer/threedmodellayer.md)
             - [CameraLayer object](../layer/cameralayer.md)
             - [LightLayer object](../layer/lightlayer.md)
 
