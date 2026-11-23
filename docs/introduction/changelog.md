@@ -10,7 +10,7 @@ What's new and changed for scripting?
 
 ## After Effects 27
 
-### After Effects 27.1 Beta Build xx
+### After Effects 27.1 Beta Build 52
 
 - Scripting methods and attributes added:
     - Added: [AVLayer.isMaterialSource](../layer/avlayer.md#avlayerismaterialsource)
