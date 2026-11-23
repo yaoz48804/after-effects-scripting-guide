@@ -9,7 +9,7 @@
 
 The MaterialAssignmentPropertyGroup object contains the material assignments for a [ParametricMeshLayer object](../layer/parametricmeshlayer.md), [ThreeDModelLayer object](../layer/threedmodellayer.md), 3D [ShapeLayer object](../layer/shapelayer.md), and 3D [TextLayer object](../layer/textlayer.md).
 
-Each assignment is a MaterialPropertyGroup whose [child material properties](materialpropertygroup.md#accessing-material-properties) depend on the receiving layer type, material source, and projection mode.
+Each assignment is a MaterialPropertyGroup whose [child material properties](materialpropertygroup.md#ae-properties) depend on the receiving layer type, material source, and projection mode.
 
 !!! info
     MaterialAssignmentPropertyGroup is a subclass of [PropertyGroup object](propertygroup.md). All PropertyGroup methods and attributes are available on a MaterialAssignmentPropertyGroup.

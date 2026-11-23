@@ -61,7 +61,7 @@ Boolean; read-only.
 
 The layer's material assignment group. Material assignments are available when the text layer is 3D and the composition uses the Advanced 3D renderer. The front, bevel, side, and back assignments can be selected with `MaterialAssignment.FRONT`, `MaterialAssignment.BEVEL`, `MaterialAssignment.SIDE`, and `MaterialAssignment.BACK`.
 
-Each assignment's [material properties](../property/materialpropertygroup.md#accessing-material-properties) depend on its source and projection mode. A default source exposes no intrinsic material properties or texture transforms; Substance and layer sources expose texture controls, and a layer source also exposes intrinsic overrides.
+Each assignment's [material properties](../property/materialpropertygroup.md#ae-properties) depend on its source and projection mode. A default source exposes no intrinsic material properties or texture transforms; Substance and layer sources expose texture controls, and a layer source also exposes intrinsic overrides.
 
 #### Type
 

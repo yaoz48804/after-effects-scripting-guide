@@ -15,346 +15,43 @@ The MaterialPropertyGroup object represents one material assignment on a materia
 !!! warning
     `materialSource` is read-only. Use `setMaterialOverride()` to assign or reset the source.
 
-## Accessing material properties
+#### AE Properties
 
-Access a material property directly on the material assignment, such as `material.roughness`, or look it up by name, such as `material.property("Roughness")`. Both forms return a [Property object](property.md). Read its current value with `.value` and change it with `.setValue()`.
+The available AE properties depend on the receiving layer type, [materialSource](#materialpropertygroupmaterialsource), and selected projection mode. The following properties are available on an added override, subject to the [layer and renderer requirements](materialassignmentpropertygroup.md#availability):
 
-The available properties depend on the receiving layer type, the assignment's material source, and the selected projection mode. An unavailable property returns `undefined` through shorthand access, or `null` through `property("Name")`.
+- `Ambient`
+- `Base Color`
+- `Blend Softness`
+- `Emission Color`
+- `Emission Intensity`
+- `Metallic`
+- `Opacity`
+- `Projection Mode`
+- `Randomize Offset`
+- `Randomize Offset Seed`
+- `Roughness`
+- `Texture Offset`
+- `Texture Rotation`
+- `Texture Scale`
+- `Uniform Tiling`
 
-You can also use a 1-based index, such as `material.property(1)`. Indexed traversal can return hidden properties, so a returned Property object does not guarantee that it can be edited. Setting a value on a hidden property, or on a property whose parent group is hidden, reports an error.
+| Material source | Available properties |
+| --- | --- |
+| Default (`materialSource === null`) | Parametric meshes: `Ambient`, `Base Color`, `Emission Color`, `Emission Intensity`, `Metallic`, and `Roughness`. Imported models: `Texture Offset`, `Texture Rotation`, and `Texture Scale`. Text and Shape layers: none. |
+| Substance material item | Texture transforms and projection controls. Material appearance comes from the Substance item. |
+| Eligible layer | Texture transforms and projection controls, plus `Ambient`, `Emission Color`, `Emission Intensity`, `Metallic`, `Opacity`, and `Roughness`. Material color comes from the source layer's rendered pixels. |
 
-See [MaterialAssignmentPropertyGroup availability](materialassignmentpropertygroup.md#availability) for the layer, renderer, and override requirements. The material-property entries below describe availability on an added override.
+`Blend Softness` requires Triplanar projection. `Uniform Tiling`, `Randomize Offset`, and `Randomize Offset Seed` are available only on 3D Text and Shape layers with a Substance or layer source. `Uniform Tiling` is unavailable with Triplanar projection. `Randomize Offset Seed` remains accessible when `Randomize Offset` is off.
 
-- **Default source:** `materialSource === null`.
-- **Substance source:** A Substance material FootageItem.
-- **Layer source:** An eligible AVLayer used as the material source, not the receiving layer.
-
-### Example
+#### Example
 
 ```javascript
 var material = textLayer.materialAssignment.property(MaterialAssignment.FRONT);
-
 material.setMaterialOverride(sourceLayer);
+// Retrieve the group again because its available properties can change.
 material = textLayer.materialAssignment.property(MaterialAssignment.FRONT);
-
-if (material.roughness) {
-    material.roughness.setValue(50);
-}
-
-var textureOffset = material.property("Texture Offset");
-if (textureOffset) {
-    textureOffset.setValue([0.25, 0.5]);
-}
+material.property("Roughness").setValue(50);
 ```
-
-After changing the material source, retrieve the `MaterialPropertyGroup` again before accessing its properties because the available property set can change.
-
----
-
-## Material properties
-
-### MaterialPropertyGroup.ambient
-
-`app.project.item(index).layer(index).materialAssignment.property(index).ambient`
-
-#### Description
-
-The material's response to ambient lighting.
-
-#### Availability
-
-- ParametricMeshLayer: available with a default or layer source.
-- ThreeDModelLayer, TextLayer, and ShapeLayer: available with a layer source only.
-
-Unavailable with a Substance source.
-
-#### Type
-
-[Property object](property.md) with a numeric percentage value.
-
----
-
-### MaterialPropertyGroup.baseColor
-
-`app.project.item(index).layer(index).materialAssignment.property(index).baseColor`
-
-#### Description
-
-The base color of the default parametric mesh material.
-
-#### Availability
-
-Available only on a ParametricMeshLayer with a default source. Unavailable on imported models, text layers, and shape layers.
-
-Unavailable with a Substance or layer source. A layer source supplies its color through its rendered pixels.
-
-#### Type
-
-[Property object](property.md) with a four-component color value, `[red, green, blue, alpha]`.
-
----
-
-### MaterialPropertyGroup.blendSoftness
-
-`app.project.item(index).layer(index).materialAssignment.property(index).blendSoftness`
-
-#### Description
-
-The softness of the transitions between the projected textures in Triplanar projection.
-
-#### Availability
-
-Available on any supported receiving layer with a Substance or layer source, when Triplanar projection is selected for the assignment.
-
-Unavailable with a default source or in other projection modes.
-
-#### Type
-
-[Property object](property.md) with a numeric percentage value in the range `[0..100]`.
-
----
-
-### MaterialPropertyGroup.emissionColor
-
-`app.project.item(index).layer(index).materialAssignment.property(index).emissionColor`
-
-#### Description
-
-The color of the light emitted by the material.
-
-#### Availability
-
-- ParametricMeshLayer: available with a default or layer source.
-- ThreeDModelLayer, TextLayer, and ShapeLayer: available with a layer source only.
-
-Unavailable with a Substance source.
-
-#### Type
-
-[Property object](property.md) with a four-component color value, `[red, green, blue, alpha]`.
-
----
-
-### MaterialPropertyGroup.emissionIntensity
-
-`app.project.item(index).layer(index).materialAssignment.property(index).emissionIntensity`
-
-#### Description
-
-The intensity of the material's emission.
-
-#### Availability
-
-- ParametricMeshLayer: available with a default or layer source.
-- ThreeDModelLayer, TextLayer, and ShapeLayer: available with a layer source only.
-
-Unavailable with a Substance source.
-
-#### Type
-
-[Property object](property.md) with a numeric percentage value.
-
----
-
-### MaterialPropertyGroup.metallic
-
-`app.project.item(index).layer(index).materialAssignment.property(index).metallic`
-
-#### Description
-
-The metallic appearance of the material.
-
-#### Availability
-
-- ParametricMeshLayer: available with a default or layer source.
-- ThreeDModelLayer, TextLayer, and ShapeLayer: available with a layer source only.
-
-Unavailable with a Substance source.
-
-#### Type
-
-[Property object](property.md) with a numeric percentage value.
-
----
-
-### MaterialPropertyGroup.opacity
-
-`app.project.item(index).layer(index).materialAssignment.property(index).opacity`
-
-#### Description
-
-The opacity of the material supplied by a source layer.
-
-#### Availability
-
-Available on any supported receiving layer with a layer source. Unavailable with default and Substance sources.
-
-#### Type
-
-[Property object](property.md) with a numeric percentage value.
-
----
-
-### MaterialPropertyGroup.projectionMode
-
-`app.project.item(index).layer(index).materialAssignment.property(index).projectionMode`
-
-#### Description
-
-The texture projection mode for the material assignment.
-
-#### Availability
-
-Available on any supported receiving layer with a Substance or layer source.
-
-Unavailable with a default source on every receiving layer type.
-
-#### Type
-
-[Property object](property.md) with a numeric popup value. The choices depend on the receiving layer:
-
-| Receiving layer | Values |
-| --- | --- |
-| ParametricMeshLayer | `1` = Proportional; `2` = Stretch; `3` = Triplanar. |
-| ThreeDModelLayer, TextLayer, ShapeLayer | `1` = Default UV; `2` = Triplanar. |
-
----
-
-### MaterialPropertyGroup.randomizeOffset
-
-`app.project.item(index).layer(index).materialAssignment.property(index).randomizeOffset`
-
-#### Description
-
-Enables per-letter or per-shape variation in the texture offset.
-
-#### Availability
-
-Available on 3D text and shape layers with a Substance or layer source.
-
-Unavailable with a default source, and on parametric meshes and imported models.
-
-#### Type
-
-[Property object](property.md) with a numeric checkbox value: `0` for off, `1` for on.
-
----
-
-### MaterialPropertyGroup.randomizeOffsetSeed
-
-`app.project.item(index).layer(index).materialAssignment.property(index).randomizeOffsetSeed`
-
-#### Description
-
-The seed used to generate the randomized texture offsets.
-
-#### Availability
-
-Available on 3D text and shape layers with a Substance or layer source. The property remains accessible when `randomizeOffset` is off.
-
-Unavailable with a default source, and on parametric meshes and imported models.
-
-#### Type
-
-[Property object](property.md) with a numeric value in the range `[0..99999]`.
-
----
-
-### MaterialPropertyGroup.roughness
-
-`app.project.item(index).layer(index).materialAssignment.property(index).roughness`
-
-#### Description
-
-The roughness of the material's surface.
-
-#### Availability
-
-- ParametricMeshLayer: available with a default or layer source.
-- ThreeDModelLayer, TextLayer, and ShapeLayer: available with a layer source only.
-
-Unavailable with a Substance source.
-
-#### Type
-
-[Property object](property.md) with a numeric percentage value.
-
----
-
-### MaterialPropertyGroup.textureOffset
-
-`app.project.item(index).layer(index).materialAssignment.property(index).textureOffset`
-
-#### Description
-
-The horizontal and vertical offset of the material's texture.
-
-#### Availability
-
-- ThreeDModelLayer: available with any source, including the default source.
-- ParametricMeshLayer, TextLayer, and ShapeLayer: available with a Substance or layer source; unavailable with a default source.
-
-#### Type
-
-[Property object](property.md) with a two-number array value.
-
----
-
-### MaterialPropertyGroup.textureRotation
-
-`app.project.item(index).layer(index).materialAssignment.property(index).textureRotation`
-
-#### Description
-
-The rotation of the material's texture.
-
-#### Availability
-
-- ThreeDModelLayer: available with any source, including the default source.
-- ParametricMeshLayer, TextLayer, and ShapeLayer: available with a Substance or layer source; unavailable with a default source.
-
-#### Type
-
-[Property object](property.md) with a numeric rotation value in degrees.
-
----
-
-### MaterialPropertyGroup.textureScale
-
-`app.project.item(index).layer(index).materialAssignment.property(index).textureScale`
-
-#### Description
-
-The horizontal and vertical scale of the material's texture.
-
-#### Availability
-
-- ThreeDModelLayer: available with any source, including the default source.
-- ParametricMeshLayer, TextLayer, and ShapeLayer: available with a Substance or layer source; unavailable with a default source.
-
-#### Type
-
-[Property object](property.md) with a two-number array value.
-
----
-
-### MaterialPropertyGroup.uniformTiling
-
-`app.project.item(index).layer(index).materialAssignment.property(index).uniformTiling`
-
-#### Description
-
-Controls whether texture tiling uses a shared bounding box or the local bounds of each shape.
-
-#### Availability
-
-Available on 3D text and shape layers with a Substance or layer source, except when Triplanar projection is selected.
-
-Unavailable with a default source, and on parametric meshes and imported models.
-
-#### Type
-
-[Property object](property.md) with a numeric checkbox value: `0` for off, `1` for on.
 
 ---
 
