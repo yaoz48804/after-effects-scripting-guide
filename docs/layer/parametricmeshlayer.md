@@ -50,9 +50,7 @@ if (layer instanceof ParametricMeshLayer)
 
 #### Description
 
-`true` if this layer type supports adding or removing material overrides.
-
-Parametric mesh layers always have their material override present, so this value is `false`. The material source can still be changed with [MaterialPropertyGroup.setMaterialOverride()](../property/materialpropertygroup.md#materialpropertygroupsetmaterialoverride).
+This value is `false` for parametric mesh layers because their material override is always present and cannot be removed. The material source can still be changed with [MaterialPropertyGroup.setMaterialOverride()](../property/materialpropertygroup.md#materialpropertygroupsetmaterialoverride).
 
 #### Type
 
@@ -71,7 +69,7 @@ Boolean; read-only.
 
 The layer's material assignment group. A ParametricMeshLayer has one material assignment, accessible with `MaterialAssignment.DEFAULT`.
 
-The assignment's [material properties](../property/materialpropertygroup.md#ae-properties) depend on its source. The default material exposes intrinsic properties such as Base Color and Roughness; Substance and layer sources expose texture transforms. Uniform Tiling and Randomize Offset are not available on parametric mesh layers.
+The assignment's [material properties](../property/materialpropertygroup.md#ae-properties) depend on its source. The default material exposes properties such as Base Color and Roughness. Substance and layer sources expose texture transform properties. Uniform Tiling and Randomize Offset are not available on parametric mesh layers.
 
 #### Type
 

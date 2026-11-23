@@ -20,9 +20,9 @@ The ShapeLayer object represents a shape layer within a composition. Create it u
 
 #### Description
 
-`true` if shape layers support adding or removing their material overrides. This is a layer-type capability and does not check whether the layer is currently 3D or whether the composition uses the Advanced 3D renderer.
+`true` if Shape layers support adding or removing material overrides.
 
-Shape layers return `true` even when they are 2D or the composition uses another renderer. Material assignment access and override operations still fail until the layer is 3D in an Advanced 3D composition.
+Shape layers return `true` even when they are 2D or the composition uses another renderer. Material assignment access and override operations will fail unless the layer is 3D in an Advanced 3D composition.
 
 #### Type
 
@@ -39,9 +39,9 @@ Boolean; read-only.
 
 #### Description
 
-The layer's material assignment group. Material assignments are available when the shape layer is 3D and the composition uses the Advanced 3D renderer. The front, bevel, side, and back assignments can be selected with `MaterialAssignment.FRONT`, `MaterialAssignment.BEVEL`, `MaterialAssignment.SIDE`, and `MaterialAssignment.BACK`.
+The layer's material assignment group. Material assignments are available when the Shape layer is 3D and the composition uses the Advanced 3D renderer. The front, bevel, side, and back assignments can be selected with `MaterialAssignment.FRONT`, `MaterialAssignment.BEVEL`, `MaterialAssignment.SIDE`, and `MaterialAssignment.BACK`.
 
-Each assignment's [material properties](../property/materialpropertygroup.md#ae-properties) depend on its source and projection mode. A default source exposes no intrinsic material properties or texture transforms; Substance and layer sources expose texture controls, and a layer source also exposes intrinsic overrides.
+Each assignment's [material properties](../property/materialpropertygroup.md#ae-properties) depend on its source and projection mode. A default source exposes no additional material properties or texture transforms. Substance and layer sources expose texture controls, and a layer source also exposes material properties such as Opacity, Roughness, and Metallic.
 
 #### Type
 
@@ -58,7 +58,7 @@ Each assignment's [material properties](../property/materialpropertygroup.md#ae-
 
 #### Description
 
-The total number of material assignments available on a 3D shape layer in an Advanced 3D composition. The value is 4 for the front, bevel, side, and back assignments, including assignments whose override has not been added. This value is the same as `materialAssignment.numProperties`.
+The total number of material assignments available on a 3D Shape layer in an Advanced 3D composition. The value is 4 for the front, bevel, side, and back assignments, including assignments whose override has not been added. This value is the same as `materialAssignment.numProperties`.
 
 #### Type
 
