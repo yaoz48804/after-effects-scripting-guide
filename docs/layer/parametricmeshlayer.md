@@ -39,8 +39,6 @@ if (layer instanceof ParametricMeshLayer)
 }
 ```
 
-The material assignment APIs below are available in After Effects (Beta) 27.1 and are subject to change while they remain in Beta.
-
 ## Attributes
 
 ### ParametricMeshLayer.canAddOrRemoveMaterialOverride

@@ -364,9 +364,6 @@ Unavailable with a default source, and on parametric meshes and imported models.
 
 `app.project.item(index).layer(index).materialAssignment.property(index).isOverride`
 
-!!! warning
-    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
-
 #### Description
 
 `true` if the material override has been added for this assignment; otherwise `false`.
@@ -382,9 +379,6 @@ Boolean; read-only.
 ### MaterialPropertyGroup.materialSource
 
 `app.project.item(index).layer(index).materialAssignment.property(index).materialSource`
-
-!!! warning
-    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
 
 #### Description
 
@@ -422,9 +416,6 @@ FootageItem object, AVLayer object, or `null`; read-only.
 
 `app.project.item(index).layer(index).materialAssignment.property(index).removeMaterialOverride()`
 
-!!! warning
-    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
-
 #### Description
 
 Removes the material override and resets its source, property values, keyframes, and expressions to the layer's default material state.
@@ -444,9 +435,6 @@ Nothing.
 ### MaterialPropertyGroup.setMaterialOverride()
 
 `app.project.item(index).layer(index).materialAssignment.property(index).setMaterialOverride([materialSource])`
-
-!!! warning
-    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
 
 #### Description
 

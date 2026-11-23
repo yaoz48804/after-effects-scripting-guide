@@ -61,9 +61,6 @@ The `MaterialAssignment` enumerated values identify material slots that have a k
 
 `app.project.item(index).layer(index).materialAssignment.numProperties`
 
-!!! warning
-    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
-
 #### Description
 
 The total number of material assignments available on the layer, including assignments whose material override has not been added.
@@ -79,9 +76,6 @@ Integer; read-only.
 ### MaterialAssignmentPropertyGroup.property()
 
 `app.project.item(index).layer(index).materialAssignment.property(indexOrAssignmentOrName)`
-
-!!! warning
-    This functionality is in After Effects (Beta) 27.1 and is subject to change while it remains in Beta.
 
 #### Description
 
