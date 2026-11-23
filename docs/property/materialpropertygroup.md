@@ -92,9 +92,8 @@ The following layers are ineligible as material sources:
 - A null layer.
 - An adjustment layer.
 - An imported 3D model layer.
-- A ParametricMeshLayer.
+- A Parametric Mesh Layer.
 - An audio-only layer.
-- A layer whose layer or source name is empty.
 - A layer that depends on the target layer and would create a circular material dependency.
 
 CameraLayer and LightLayer objects are also ineligible because they are not AVLayer objects. A source layer must be a visual AVLayer and can be 2D.
@@ -137,7 +136,7 @@ Nothing.
 
 Adds the material override if necessary, then assigns the supplied material source. Passing no argument or `null` adds or updates the override with the default material. The override remains added after resetting its source to the default.
 
-An item source must be a Substance material item. Assigning the same source again is allowed.
+A project item source must be a Substance material item. Assigning the same source again is allowed.
 
 A layer source must be a suitable visual AVLayer with a nonempty name in the same composition. It may be a 2D layer. See [materialSource](#materialpropertygroupmaterialsource) for the complete list of ineligible layer types and references.
 
