@@ -41,8 +41,6 @@ Boolean; read-only.
 
 The layer's material assignment group. Material assignments are available when the shape layer is 3D and the composition uses the Advanced 3D renderer. The front, bevel, side, and back assignments can be selected with `MaterialAssignment.FRONT`, `MaterialAssignment.BEVEL`, `MaterialAssignment.SIDE`, and `MaterialAssignment.BACK`.
 
-Accessing this attribute on a 2D shape layer, or in a Classic 3D or Cinema 4D composition, reports `Unable to find materials on this layer.`
-
 Each assignment's [material properties](../property/materialpropertygroup.md#accessing-material-properties) depend on its source and projection mode. A default source exposes no intrinsic material properties or texture transforms; Substance and layer sources expose texture controls, and a layer source also exposes intrinsic overrides.
 
 #### Type
@@ -83,7 +81,7 @@ Adds every material override that is not already present, preserving existing ma
 
 On layers that support adding or removing overrides, this method does nothing if all overrides are already present.
 
-This method reports an error if the layer has no available material state. A 2D shape layer, or one in a Classic 3D or Cinema 4D composition, reports `Unable to find materials on this layer.`
+The layer must be 3D, have available material assignments, and belong to a composition that uses the Advanced 3D renderer.
 
 #### Parameters
 

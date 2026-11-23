@@ -31,7 +31,7 @@ Material assignments are available on [parametric mesh layers](../layer/parametr
 
 [Text layers](../layer/textlayer.md) and [shape layers](../layer/shapelayer.md) support material assignments when they are 3D layers in a composition that uses the Advanced 3D renderer.
 
-Other layer types do not support material assignments. Accessing `materialAssignment` on a 2D text or shape layer, or one in a Classic 3D or Cinema 4D composition, reports `Unable to find materials on this layer.`
+Other layer types do not support material assignments.
 
 ### Override state
 
@@ -104,7 +104,7 @@ An assignment enum is valid only for the corresponding layer type:
 - Parametric mesh layers accept `DEFAULT`.
 - Imported 3D models do not support assignment enum values; use an index or exact name.
 
-An unsupported assignment enum reports an error such as `Unable to find material assignment 'Front' on this layer.`
+Using an assignment enum that is not valid for the layer raises an error.
 
 #### Parameters
 

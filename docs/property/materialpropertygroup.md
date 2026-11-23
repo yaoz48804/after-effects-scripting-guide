@@ -429,7 +429,7 @@ FootageItem object, AVLayer object, or `null`; read-only.
 
 Removes the material override and resets its source, property values, keyframes, and expressions to the layer's default material state.
 
-This method reports an error when the layer's material override is always present or when this assignment has no override to remove. Use the layer's `canAddOrRemoveMaterialOverride` and the assignment's `isOverride` attributes before calling it.
+The layer's `canAddOrRemoveMaterialOverride` and the assignment's `isOverride` attributes must both be `true` before calling this method.
 
 #### Parameters
 

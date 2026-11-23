@@ -94,7 +94,7 @@ Each assignment exposes Texture Offset, Texture Rotation, and Texture Scale even
 
 The total number of material assignments defined by the imported 3D model, including assignments whose material override has not been added. This value is the same as `materialAssignment.numProperties`.
 
-If the model has no available material assignments, accessing this attribute reports `Unable to find materials on this layer.` rather than returning 0.
+If the model has no available material assignments, accessing this attribute fails rather than returning 0.
 
 #### Type
 
@@ -117,11 +117,9 @@ Adds every material override that is not already present, preserving existing ma
 
 On layers that support adding or removing overrides, this method does nothing if all overrides are already present.
 
-This method reports an error if the layer cannot add or remove overrides or if no material assignments are available.
+This method requires a layer that supports adding or removing overrides and has available material assignments.
 
-For a single-material model, the layer cannot add or remove overrides, so this method reports `This layer does not support adding or removing material overrides.`
-
-If the model has no material assignments, it reports `Unable to find materials on this layer.`
+Single-material models always have their material override present, so this method is not supported on those layers.
 
 #### Parameters
 
