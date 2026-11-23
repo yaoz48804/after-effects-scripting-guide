@@ -19,7 +19,7 @@ The MaterialPropertyGroup object represents one material assignment on a materia
 
 Access a material property directly on the material assignment, such as `material.roughness`, or look it up by name, such as `material.property("Roughness")`. Both forms return a [Property object](property.md). Read its current value with `.value` and change it with `.setValue()`.
 
-The available properties depend on the receiving layer type, the assignment's material source, and the projection features enabled in the current Beta build. An unavailable property returns `undefined` through shorthand access, or `null` through `property("Name")`.
+The available properties depend on the receiving layer type, the assignment's material source, and the selected projection mode. An unavailable property returns `undefined` through shorthand access, or `null` through `property("Name")`.
 
 You can also use a 1-based index, such as `material.property(1)`. Indexed traversal can return hidden properties, so a returned Property object does not guarantee that it can be edited. Setting a value on a hidden property, or on a property whose parent group is hidden, reports an error.
 
@@ -104,7 +104,7 @@ The softness of the transitions between the projected textures in Triplanar proj
 
 #### Availability
 
-Available on any supported receiving layer with a Substance or layer source, when Triplanar projection is enabled in the current Beta build and selected for the assignment.
+Available on any supported receiving layer with a Substance or layer source, when Triplanar projection is selected for the assignment.
 
 Unavailable with a default source or in other projection modes.
 
@@ -205,8 +205,7 @@ The texture projection mode for the material assignment.
 
 #### Availability
 
-- ParametricMeshLayer: available with a Substance or layer source.
-- ThreeDModelLayer, TextLayer, and ShapeLayer: available with a Substance or layer source only when Triplanar projection is enabled in the current Beta build.
+Available on any supported receiving layer with a Substance or layer source.
 
 Unavailable with a default source on every receiving layer type.
 
@@ -216,7 +215,7 @@ Unavailable with a default source on every receiving layer type.
 
 | Receiving layer | Values |
 | --- | --- |
-| ParametricMeshLayer | `1` = Proportional; `2` = Stretch; `3` = Triplanar, when that feature is enabled. |
+| ParametricMeshLayer | `1` = Proportional; `2` = Stretch; `3` = Triplanar. |
 | ThreeDModelLayer, TextLayer, ShapeLayer | `1` = Default UV; `2` = Triplanar. |
 
 ---

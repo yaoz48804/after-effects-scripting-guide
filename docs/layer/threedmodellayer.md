@@ -75,7 +75,7 @@ Boolean; read-only.
 
 The layer's material assignment group. Imported 3D models can contain multiple model-defined material names. Access assignments by 1-based index or exact name.
 
-Each assignment exposes Texture Offset, Texture Rotation, and Texture Scale even for the default material. Other [material properties](../property/materialpropertygroup.md#accessing-material-properties) depend on the source and projection features. Uniform Tiling and Randomize Offset are not available on imported model layers.
+Each assignment exposes Texture Offset, Texture Rotation, and Texture Scale even for the default material. Other [material properties](../property/materialpropertygroup.md#accessing-material-properties) depend on the source and projection mode. Uniform Tiling and Randomize Offset are not available on imported model layers.
 
 #### Type
 
