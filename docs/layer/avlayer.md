@@ -340,7 +340,7 @@ Floating-point value; read-only.
 
 #### Type
 
-Boolean; read-only. This attribute is available on AVLayer objects.
+Boolean; read-only.
 
 ---
 
