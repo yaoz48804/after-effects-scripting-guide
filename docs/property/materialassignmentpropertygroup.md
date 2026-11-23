@@ -14,14 +14,13 @@ Each assignment is a MaterialPropertyGroup whose [child material properties](mat
 !!! info
     MaterialAssignmentPropertyGroup is a subclass of [PropertyGroup object](propertygroup.md). All PropertyGroup methods and attributes are available on a MaterialAssignmentPropertyGroup.
 
-The group can be accessed from the layer's `materialAssignment` attribute or by using its match name:
+The group can be accessed from the layer's `materialAssignment` attribute:
 
 ```javascript
 var materialAssignments = layer.materialAssignment;
-var sameAssignments = layer.property("ADBE3D Material Parade");
 ```
 
-For a ParametricMeshLayer, use `"ADBE3D Para Mat Parade"` when traversing by match name.
+For match names, see [3D layer match names](../matchnames/layer/3dlayer.md#materials).
 
 ## Availability
 
@@ -54,22 +53,6 @@ The `MaterialAssignment` enumerated values identify material slots that have a k
 - `MaterialAssignment.DEFAULT`
 
 `FRONT`, `BEVEL`, `SIDE`, and `BACK` select slots on 3D TextLayer and ShapeLayer objects. `DEFAULT` selects the material assignment on a ParametricMeshLayer. ThreeDModelLayer material names are model-defined, so access its slots by index or exact name.
-
-## Attributes
-
-### MaterialAssignmentPropertyGroup.numProperties
-
-`app.project.item(index).layer(index).materialAssignment.numProperties`
-
-#### Description
-
-The total number of material assignments available on the layer, including assignments whose material override has not been added.
-
-This value is the same as the layer's `materialAssignmentCount` attribute.
-
-#### Type
-
-Integer; read-only.
 
 ## Methods
 

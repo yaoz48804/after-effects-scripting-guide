@@ -96,8 +96,6 @@ The following layers are ineligible as material sources:
 - An audio-only layer.
 - A layer that depends on the target layer and would create a circular material dependency.
 
-CameraLayer and LightLayer objects are also ineligible because they are not AVLayer objects. A source layer must be a visual AVLayer and can be 2D.
-
 An unadded material override is readable and returns `null`.
 
 #### Type
