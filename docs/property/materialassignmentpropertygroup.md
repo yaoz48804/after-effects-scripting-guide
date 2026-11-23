@@ -51,9 +51,9 @@ The `MaterialAssignment` enumerated values identify material slots that have a k
 - `MaterialAssignment.BEVEL`
 - `MaterialAssignment.SIDE`
 - `MaterialAssignment.BACK`
-- `MaterialAssignment.MATERIAL`
+- `MaterialAssignment.DEFAULT`
 
-`FRONT`, `BEVEL`, `SIDE`, and `BACK` select slots on 3D TextLayer and ShapeLayer objects. `MATERIAL` selects the material assignment on a ParametricMeshLayer. ThreeDModelLayer material names are model-defined, so access its slots by index or exact name.
+`FRONT`, `BEVEL`, `SIDE`, and `BACK` select slots on 3D TextLayer and ShapeLayer objects. `DEFAULT` selects the material assignment on a ParametricMeshLayer. ThreeDModelLayer material names are model-defined, so access its slots by index or exact name.
 
 ## Attributes
 
@@ -93,7 +93,7 @@ The object can also be called directly as a shortcut:
 var front = textLayer.materialAssignment(MaterialAssignment.FRONT);
 var sameFront = textLayer.materialAssignment.property(MaterialAssignment.FRONT);
 var modelMaterial = modelLayer.materialAssignment.property("Material_MR");
-var meshMaterial = meshLayer.materialAssignment.property(MaterialAssignment.MATERIAL);
+var meshMaterial = meshLayer.materialAssignment.property(MaterialAssignment.DEFAULT);
 ```
 
 Names are case-sensitive and must match the full display name, English name, or match name. Partial or unknown names return `null`; if duplicate names exist, the first match is returned.
@@ -101,7 +101,7 @@ Names are case-sensitive and must match the full display name, English name, or 
 An assignment enum is valid only for the corresponding layer type:
 
 - Text and shape layers accept `FRONT`, `BEVEL`, `SIDE`, and `BACK`.
-- Parametric mesh layers accept `MATERIAL`.
+- Parametric mesh layers accept `DEFAULT`.
 - Imported 3D models do not support assignment enum values; use an index or exact name.
 
 An unsupported assignment enum reports an error such as `Unable to find material assignment 'Front' on this layer.`

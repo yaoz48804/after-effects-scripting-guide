@@ -71,7 +71,7 @@ Boolean; read-only.
 
 #### Description
 
-The layer's material assignment group. A ParametricMeshLayer has one material assignment, accessible with `MaterialAssignment.MATERIAL`.
+The layer's material assignment group. A ParametricMeshLayer has one material assignment, accessible with `MaterialAssignment.DEFAULT`.
 
 The assignment's [material properties](../property/materialpropertygroup.md#accessing-material-properties) depend on its source. The default material exposes intrinsic properties such as Base Color and Roughness; Substance and layer sources expose texture transforms. Uniform Tiling and Randomize Offset are not available on parametric mesh layers.
 

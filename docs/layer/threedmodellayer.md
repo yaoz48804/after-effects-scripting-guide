@@ -115,7 +115,9 @@ Integer; read-only.
 
 Adds every material override that is not already present, preserving existing material sources and property values.
 
-This method reports an error if the layer cannot add or remove overrides, if no material assignments are available, or if all overrides are already present. In the last case, it reports `All material overrides have been added.`
+On layers that support adding or removing overrides, this method does nothing if all overrides are already present.
+
+This method reports an error if the layer cannot add or remove overrides or if no material assignments are available.
 
 For a single-material model, the layer cannot add or remove overrides, so this method reports `This layer does not support adding or removing material overrides.`
 

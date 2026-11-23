@@ -81,7 +81,9 @@ Integer; read-only.
 
 Adds every material override that is not already present, preserving existing material sources and property values.
 
-This method reports an error if the layer has no available material state or if all overrides are already present. A 2D shape layer, or one in a Classic 3D or Cinema 4D composition, reports `Unable to find materials on this layer.` If all overrides are already present, it reports `All material overrides have been added.`
+On layers that support adding or removing overrides, this method does nothing if all overrides are already present.
+
+This method reports an error if the layer has no available material state. A 2D shape layer, or one in a Classic 3D or Cinema 4D composition, reports `Unable to find materials on this layer.`
 
 #### Parameters
 
