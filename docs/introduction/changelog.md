@@ -17,6 +17,7 @@ What's new and changed for scripting?
     - Added material assignment APIs to [ParametricMeshLayer](../layer/parametricmeshlayer.md#parametricmeshlayermaterialassignment), [ThreeDModelLayer](../layer/threedmodellayer.md#threedmodellayermaterialassignment), [ShapeLayer](../layer/shapelayer.md#shapelayermaterialassignment), and [TextLayer](../layer/textlayer.md#textlayermaterialassignment)
     - Added: [MaterialAssignmentPropertyGroup object](../property/materialassignmentpropertygroup.md)
     - Added: [MaterialPropertyGroup object](../property/materialpropertygroup.md)
+- Added documentation for [material assignment, material property, and displacement match names](../matchnames/layer/3dlayer.md#materials).
 
 ---
 
